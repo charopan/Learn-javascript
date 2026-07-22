@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>เครื่องคิดเลขของฉัน</title>
+<style>
+  body {
+    font-family: "Segoe UI", sans-serif;
+    background: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .calculator {
+    background: #2b2b3d;
+    padding: 24px;
+    border-radius: 16px;
+    width: 260px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  #display {
+    width: 100%;
+    height: 60px;
+    font-size: 28px;
+    text-align: right;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #10101a;
+    color: #fff;
+  }
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  button {
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #3d3d54;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover { background: #4d4d6a; }
+  .operator { background: #e08a45; }
+  .operator:hover { background: #f09a55; }
+  .equal { background: #4caf82; grid-column: span 2; }
+  .equal:hover { background: #5cbf92; }
+  .clear { background: #c0524f; }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="display" value="0" readonly>
+  <div class="buttons">
+    <button class="clear" onclick="clearDisplay()">C</button>
+    <button class="operator" onclick="pressKey('/')">÷</button>
+    <button class="operator" onclick="pressKey('*')">×</button>
+    <button class="operator" onclick="pressKey('-')">−</button>
+
+    <button onclick="pressKey('7')">7</button>
+    <button onclick="pressKey('8')">8</button>
+    <button onclick="pressKey('9')">9</button>
+    <button class="operator" onclick="pressKey('+')">+</button>
+
+    <button onclick="pressKey('4')">4</button>
+    <button onclick="pressKey('5')">5</button>
+    <button onclick="pressKey('6')">6</button>
+    <button onclick="pressKey('0')">0</button>
+
+    <button onclick="pressKey('1')">1</button>
+    <button onclick="pressKey('2')">2</button>
+    <button onclick="pressKey('3')">3</button>
+    <button onclick="pressKey('.')">.</button>
+
+    <button class="equal" onclick="calculateResult()">=</button>
+  </div>
+</div>
+
+<script src="calculator.js"></script>
+
+</body>
+</html>
