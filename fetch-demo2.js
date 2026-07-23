@@ -25,3 +25,7 @@ async function getUsers() {
     console.log(error);
   }
 }
+// ฟังก์ชันล้างผลลัพธ์ที่แสดงอยู่
+function clearResults() {
+  resultBox.innerHTML = "";
+}
