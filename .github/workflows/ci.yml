@@ -23,7 +23,9 @@ jobs:
       # ขั้นที่ 3: ติดตั้ง library ที่โปรเจกต์ต้องใช้
       - name: ติดตั้ง dependencies
         run: npm install
+        working-directory: ./my-sever
 
-      # ขั้นที่ 4: รันคำสั่งทดสอบ (ตอนนี้แค่ log ข้อความไปก่อน)
+      # ขั้นที่ 4: รันคำสั่งทดสอบ
       - name: ทดสอบเบื้องต้น
         run: node -e "console.log('โค้ดรันได้ปกติ ผ่านการทดสอบ')"
+        working-directory: ./my-sever
